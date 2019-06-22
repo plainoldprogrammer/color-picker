@@ -15,5 +15,23 @@ namespace color_picker
         {
             InitializeComponent();
         }
-    }
+
+		private void Panel1_Paint(object sender, PaintEventArgs e)
+		{
+			System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+			System.Drawing.Graphics panelGraphics;
+			panelGraphics = panelColorPicker.CreateGraphics();
+	
+			panelGraphics.FillRectangle(brush, new Rectangle(0, 0, 180, 80) );
+			
+			brush.Color = System.Drawing.Color.Green;
+			panelGraphics.FillRectangle(brush, new Rectangle(0, 80, 180, 80));
+		
+			brush.Color = System.Drawing.Color.Blue;
+			panelGraphics.FillRectangle(brush, new Rectangle(0, 160, 180, 80));
+
+			brush.Dispose();
+			panelGraphics.Dispose();
+		}
+	}
 }
