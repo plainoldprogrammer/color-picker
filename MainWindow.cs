@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace color_picker
@@ -36,17 +31,29 @@ namespace color_picker
 
         private void textBoxRedValue_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changing the red value");
+            Color customColor = Color.FromArgb(Int32.Parse(textBoxRedValue.Text), 0, 0);
+            System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(customColor);
+            System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
+
+            panelGraphics.FillRectangle(brush, new Rectangle(0, 0, 180, 80));
         }
 
         private void textBoxGreenValue_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changing the green value");
+            Color customColor = Color.FromArgb(0, Int32.Parse(textBoxGreenValue.Text), 0);
+            System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(customColor);
+            System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
+
+            panelGraphics.FillRectangle(brush, new Rectangle(0, 80, 180, 80));
         }
 
         private void textBoxBlueValue_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changing the blue value");
+            Color customColor = Color.FromArgb(0, 0, Int32.Parse(textBoxBlueValue.Text));
+            System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(customColor);
+            System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
+
+            panelGraphics.FillRectangle(brush, new Rectangle(0, 160, 180, 80));
         }
     }
 }
