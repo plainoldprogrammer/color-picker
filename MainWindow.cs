@@ -33,5 +33,20 @@ namespace color_picker
 			brush.Dispose();
 			panelGraphics.Dispose();
 		}
-	}
+
+        private void textBoxRedValue_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Changing the red value");
+        }
+
+        private void textBoxGreenValue_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Changing the green value");
+        }
+
+        private void textBoxBlueValue_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Changing the blue value");
+        }
+    }
 }
