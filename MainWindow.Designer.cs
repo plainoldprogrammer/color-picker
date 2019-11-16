@@ -33,7 +33,7 @@
 			this.panelColorPicker.Name = "panelColorPicker";
 			this.panelColorPicker.Size = new System.Drawing.Size(240, 295);
 			this.panelColorPicker.TabIndex = 0;
-			this.panelColorPicker.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+			this.panelColorPicker.Paint += new System.Windows.Forms.PaintEventHandler(this.panelColorPicker_Paint);
 			// 
 			// textBoxRedValue
 			// 
@@ -93,6 +93,7 @@
 			this.panelColorResulting.Name = "panelColorResulting";
 			this.panelColorResulting.Size = new System.Drawing.Size(240, 295);
 			this.panelColorResulting.TabIndex = 7;
+			this.panelColorResulting.Paint += new System.Windows.Forms.PaintEventHandler(this.panelColorResulting_Paint);
 			// 
 			// MainWindow
 			// 
