@@ -35,6 +35,7 @@ namespace color_picker
 			brush.Dispose();
 			panelGraphics.Dispose();
 		}
+
 		private void panelColorResulting_Paint(object sender, PaintEventArgs e)
 		{
 			changePanelColorResulting();
@@ -81,3 +82,4 @@ namespace color_picker
 		}
 	}
 }
+
