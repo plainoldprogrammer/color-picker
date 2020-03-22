@@ -4,4 +4,8 @@ The *color-picker* utility is a C# application which let combine the RGB values 
 
 **Capabilities**
 
-* Reads the Red, Green and Blue values and display the resulting color.
+* Read the Red, Green and Blue values and display the resulting color.
+
+**Screenshot**
+
+<img src="https://raw.githubusercontent.com/plainoldprogrammer/color-picker/master/screenshots/screenshot-main-window.jpg" width="557" height="303">
