@@ -6,6 +6,6 @@
 
 ---
 
-### Capabilities*
+### Capabilities
 
 * Read the Red, Green and Blue values and display the resulting color.
