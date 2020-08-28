@@ -102,25 +102,29 @@ namespace color_picker
 
         private void textBoxBlueValue_TextChanged(object sender, EventArgs e)
         {
-			if (textBoxBlueValue.Text.Length != 0)
+			int blueValue;
+			bool isValidNumber = int.TryParse(textBoxBlueValue.Text, out blueValue);
+
+			if (isValidNumber)
 			{
-				int blueValue = Int32.Parse(textBoxBlueValue.Text);
+				if (textBoxBlueValue.Text.Length != 0)
+				{
+					if (textBoxBlueValue.Text.Equals(""))
+					{
+						blueValue = 0;
+					}
+					else
+					{
+						blueValue = Int32.Parse(textBoxBlueValue.Text);
+					}
 
-				if (textBoxBlueValue.Text.Equals(""))
-				{
-					blueValue = 0;
-				}
-				else
-				{
-					blueValue = Int32.Parse(textBoxBlueValue.Text);
-				}
-
-				if (blueValue >= 0 && blueValue <= 255)
-				{
-					System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(Color.FromArgb(0, 0, blueValue));
-					System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
-					panelGraphics.FillRectangle(brush, new Rectangle(0, 160, 180, 80));
-					changePanelColorResulting();
+					if (blueValue >= 0 && blueValue <= 255)
+					{
+						System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(Color.FromArgb(0, 0, blueValue));
+						System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
+						panelGraphics.FillRectangle(brush, new Rectangle(0, 160, 180, 80));
+						changePanelColorResulting();
+					}
 				}
 			}
         }
