@@ -65,6 +65,8 @@ namespace color_picker
 
         private void textBoxGreenValue_TextChanged(object sender, EventArgs e)
         {
+			int greenValue = Int32.Parse(textBoxGreenValue.Text);
+
 			if (textBoxGreenValue.Text.Equals(""))
 			{
 				greenValue = 0;
@@ -74,11 +76,13 @@ namespace color_picker
 				greenValue = Int32.Parse(textBoxGreenValue.Text);
 			}
 
-            System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(Color.FromArgb(0, greenValue, 0));
-            System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
-
-            panelGraphics.FillRectangle(brush, new Rectangle(0, 80, 180, 80));
-			changePanelColorResulting();
+			if (greenValue >= 0 && greenValue <= 255)
+			{
+				System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(Color.FromArgb(0, greenValue, 0));
+				System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
+				panelGraphics.FillRectangle(brush, new Rectangle(0, 80, 180, 80));
+				changePanelColorResulting();
+			}
         }
 
         private void textBoxBlueValue_TextChanged(object sender, EventArgs e)
