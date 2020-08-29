@@ -45,8 +45,6 @@ namespace color_picker
         {
 			if (textBoxRedValue.Text.Length != 0)
 			{
-
-				int redValue;
 				bool isValidNumber = int.TryParse(textBoxRedValue.Text, out redValue);
 
 				if (isValidNumber)
@@ -62,10 +60,15 @@ namespace color_picker
 
 					if (redValue >= 0 && redValue <= 255)
 					{
+						Console.WriteLine("Enter");
 						System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(Color.FromArgb(redValue, 0, 0));
 						System.Drawing.Graphics panelGraphics = panelColorPicker.CreateGraphics();
 						panelGraphics.FillRectangle(brush, new Rectangle(0, 0, 180, 80));
 						changePanelColorResulting();
+					}
+					else
+					{
+						Console.WriteLine("Not Enter");
 					}
 				}
 			}
@@ -73,7 +76,6 @@ namespace color_picker
 
         private void textBoxGreenValue_TextChanged(object sender, EventArgs e)
         {
-			int greenValue;
 			bool isValidNumber = int.TryParse(textBoxGreenValue.Text, out greenValue);
 
 			if (isValidNumber)
@@ -102,7 +104,6 @@ namespace color_picker
 
         private void textBoxBlueValue_TextChanged(object sender, EventArgs e)
         {
-			int blueValue;
 			bool isValidNumber = int.TryParse(textBoxBlueValue.Text, out blueValue);
 
 			if (isValidNumber)
@@ -131,7 +132,7 @@ namespace color_picker
 
 		private void changePanelColorResulting()
 		{
-			Console.WriteLine("R: " + redValue + "\tG: " + greenValue + "\tB: " + blueValue);
+			Console.WriteLine("Changing color [R: " + redValue + "\tG: " + greenValue + "\tB: " + blueValue + "]");
 			System.Drawing.Color colorMix = System.Drawing.Color.FromArgb(redValue, greenValue, blueValue);
 			System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(colorMix);
 
